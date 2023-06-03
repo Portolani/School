@@ -5,14 +5,15 @@ import java.util.List;
 import java.util.Objects;
 
 public class Student {
-
+	
+	/*These are the attributes of the student*/
 	private String studentName;
 	private String ID;
 	private String motherName;
 	private String bornDate;
 
 	private List<Discipline> disciplines = new ArrayList<Discipline>();
-
+	
 	public String getStudentName() {
 		return studentName;
 	}
@@ -51,6 +52,7 @@ public class Student {
 
 	public void setDisciplines(List<Discipline> disciplines) {
 		this.disciplines = disciplines;
+	
 	}
 
 	public double finalAverageScore() {
@@ -103,21 +105,9 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "\nStudent Name = " + 
-				studentName + 
-				"\nID = " + 
-				ID + 
-				"Mother Name = " + 
-				motherName + 
-				"\nBorn Date = " +
-				bornDate + 
-				"\nDisciplines = " + 
-				disciplines + 
-				"\n\nFinal Average Score = " + 
-				String.format("%.2f", finalAverageScore()) + 
-				"\nResult = " + 
-				result();
+		return "\nStudent Name = " + studentName + "\nID = " + ID + "\nMother Name = " + motherName + "\nBorn Date = "
+				+ bornDate + "\nDisciplines = " + disciplines + "\n\nFinal Average Score = "
+				+ String.format("%.2f", finalAverageScore()) + "\nResult = " + result();
 	}
-	
-	
+
 }
