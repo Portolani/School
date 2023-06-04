@@ -8,9 +8,6 @@ public class Discipline {
 	private String disciplineName;
 	private double score;
 
-	public Discipline() {
-		
-	}
 
 	public String getDisciplineName() {
 		return disciplineName;

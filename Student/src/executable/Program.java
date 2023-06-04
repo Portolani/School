@@ -1,7 +1,5 @@
 package executable;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -23,32 +21,30 @@ public class Program {
 		String bornDate = JOptionPane.showInputDialog("Born date:");
 		student1.setBornDate(bornDate);
 
-		Discipline discipline1 = new Discipline();
-		discipline1.setDisciplineName("JAVA");
-		discipline1.setScore(100);
+		for(int pos = 1; pos <= 4; pos++) {
+			String discipline = JOptionPane.showInputDialog(pos +" Discipline Name: ");
+			String scoreValue = JOptionPane.showInputDialog("Discipline's Score: ");
+			
+			Discipline disciplines = new Discipline();
+			disciplines.setDisciplineName(discipline);
+			disciplines.setScore(Double.valueOf(scoreValue));
+			
+			student1.getDisciplines().add(disciplines);
+		}
 		
-		student1.getDisciplines().add(discipline1);
+			JOptionPane.showMessageDialog(null, student1);
+	/*----------------------------------------------------------------------------------------*/
+		/*Removing disciplines*/
 		
-		Discipline discipline2 = new Discipline();
-		discipline2.setDisciplineName("Banco de Dados");
-		discipline2.setScore(90);
+		int choose = JOptionPane.showConfirmDialog(null, "Would you like to remove any discipline?");
 		
-		student1.getDisciplines().add(discipline2);
-		
-		Discipline discipline3 = new Discipline();
-		discipline3.setDisciplineName("Lógica e Algoritmo");
-		discipline3.setScore(95);
-		
-		student1.getDisciplines().add(discipline3);
-		
-		Discipline discipline4 = new Discipline();
-		discipline4.setDisciplineName("JavaScript");
-		discipline4.setScore(88);
-		
-		student1.getDisciplines().add(discipline4);
+		if(choose == 0) {
+			String removeDiscipline = JOptionPane.showInputDialog("Which discipline would you wish remove? 1, 2, 3 or 4");
+			student1.getDisciplines().remove(Integer.valueOf(removeDiscipline).intValue() - 1);
+		}
 		
 		/*--------------------------------------------------------------------*/
-		/*Starting print*/
+		/*Printing final result*/
 		JOptionPane.showMessageDialog(null,student1);
 	
 	} 

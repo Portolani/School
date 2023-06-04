@@ -66,20 +66,24 @@ public class Student {
 
 	}
 
-	public boolean test() {
+/*	public boolean test() {
 		if (finalAverageScore() >= 70.0) {
 			return true;
 
 		} else {
 			return false;
 		}
-	}
-
+	}	*/
+				
 	public String result() {
-		if (test() == true) {
-			return "APPROVED";
-
-		} else {
+		double average = this.finalAverageScore();
+		if (average >= 50) {
+			if(average >= 70) {
+				return "APPROVED";
+			} else {
+				return "RECUPERATING";
+			}
+		}else {
 			return "FAILED";
 		}
 	}
