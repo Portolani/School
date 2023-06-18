@@ -153,6 +153,7 @@ public class Student extends People{
 				"\nMother Name = "
 				+ motherName + 
 				"\nBorn Date = " + bornDate + 
+				"\nAge = " + age +
 				"\nCPF = " + CPF;
 	}
 

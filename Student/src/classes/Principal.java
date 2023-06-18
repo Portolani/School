@@ -61,8 +61,9 @@ public class Principal extends People {
 				"\nName = " + Name + 
 				"\nID = " + ID + 
 				"\nMother Name = " + motherName + 
-				"\nBorn Date = " + bornDate
-				+ "\nCPF = " + CPF;
+				"\nBorn Date = " + bornDate + 
+				"\nAge = " + age +
+				"\nCPF = " + CPF;
 	}
 
 }

@@ -62,6 +62,7 @@ public class Secretary extends People {
 				"\nID = " + ID + 
 				"\nMotherName = " + motherName + 
 				"\nBornDate = " + bornDate +
+				"\nAge = " + age +
 				"\nCPF = " + CPF;
 	}
 

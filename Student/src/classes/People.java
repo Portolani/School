@@ -8,6 +8,7 @@ public class People {
 	protected String ID;
 	protected String motherName;
 	protected String bornDate;
+	protected Integer age;
 	protected String CPF;
 
 	public String getName() {
@@ -42,12 +43,20 @@ public class People {
 		this.bornDate = bornDate;
 	}
 
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 	public String getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 
 	@Override
@@ -70,10 +79,11 @@ public class People {
 
 	@Override
 	public String toString() {
-		return "\nName = " + Name + "\nID = " + ID + "\nMother Name = " + 
-				motherName + 
-				"\nBorn Date = " + bornDate
-				+ "\nCPF = " + CPF;
+		return "\nName = " + Name + "\nID = " +
+				ID + "\nMother Name = " + motherName + 
+				"\nBorn Date = " + bornDate +
+				"\nAge = " + age +
+				"\nCPF = " + CPF;
 	}
 
 }
