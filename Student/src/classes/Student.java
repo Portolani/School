@@ -4,22 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Student {
+public class Student extends People{
 	
 	/*These are the attributes of the student*/
-	private String studentName;
-	private String ID;
-	private String motherName;
-	private String bornDate;
-
+	
+	private String schoolName;
+	private String enrollmentDate;
+	private String enrolledGrade;
 	private List<Discipline> disciplines = new ArrayList<Discipline>();
 	
-	public String getStudentName() {
-		return studentName;
+	
+	public String getSchoolName() {
+		return schoolName;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setSchoolName(String schoolName) {
+		this.schoolName = schoolName;
+	}
+
+	public String getEnrollmentDate() {
+		return enrollmentDate;
+	}
+
+	public void setEnrollmentDate(String enrollmentDate) {
+		this.enrollmentDate = enrollmentDate;
+	}
+
+	public String getEnrolledGrade() {
+		return enrolledGrade;
+	}
+
+	public void setEnrolledGrade(String enrolledGrade) {
+		this.enrolledGrade = enrolledGrade;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String Name) {
+		this.Name = Name;
 	}
 
 	public String getID() {
@@ -44,6 +68,15 @@ public class Student {
 
 	public void setBornDate(String bornDate) {
 		this.bornDate = bornDate;
+	}
+	
+
+	public String getCPF() {
+		return CPF;
+	}
+
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 
 	public List<Discipline> getDisciplines() {
@@ -79,18 +112,18 @@ public class Student {
 		double average = this.finalAverageScore();
 		if (average >= 50) {
 			if(average >= 70) {
-				return "APPROVED";
+				return StudentStatus.APPROVED;
 			} else {
-				return "RECUPERATING";
+				return StudentStatus.RECUPERATING;
 			}
 		}else {
-			return "FAILED";
+			return StudentStatus.FAILED;
 		}
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ID, bornDate, disciplines, motherName, studentName);
+		return Objects.hash(ID, bornDate, disciplines, motherName, Name);
 	}
 
 	@Override
@@ -104,14 +137,23 @@ public class Student {
 		Student other = (Student) obj;
 		return Objects.equals(ID, other.ID) && Objects.equals(bornDate, other.bornDate)
 				&& Objects.equals(disciplines, other.disciplines) && Objects.equals(motherName, other.motherName)
-				&& Objects.equals(studentName, other.studentName);
+				&& Objects.equals(Name, other.Name);
 	}
 
 	@Override
 	public String toString() {
-		return "\nStudent Name = " + studentName + "\nID = " + ID + "\nMother Name = " + motherName + "\nBorn Date = "
-				+ bornDate + "\nDisciplines = " + disciplines + "\n\nFinal Average Score = "
-				+ String.format("%.2f", finalAverageScore()) + "\nResult = " + result();
+		return "\nSchoolName = " + schoolName + 
+				"\nEnrollment Date = " + enrollmentDate + 
+				"\nEnrolled Grade = "
+				+ enrolledGrade + 
+				"\nDisciplines = " + 
+				disciplines + 
+				"\nName = " + Name + 
+				"\nID = " + ID + 
+				"\nMother Name = "
+				+ motherName + 
+				"\nBorn Date = " + bornDate + 
+				"\nCPF = " + CPF;
 	}
 
 }
